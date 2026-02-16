@@ -9,14 +9,14 @@ export default function Navbar() {
     if (!token) return
     ;(async () => {
       try {
-        const res = await fetch('http://localhost:4000/auth/me', {
+        const res = await fetch('https://fittrack-6smg.onrender.com/auth/me', {
           headers: { Authorization: `Bearer ${token}` },
         })
         if (!res.ok) return
         const data = await res.json()
         const label = data?.user?.email || data?.user?.name || ''
         setUserLabel(label)
-        const sRes = await fetch('http://localhost:4000/stats/today', {
+        const sRes = await fetch('https://fittrack-6smg.onrender.com/stats/today', {
           headers: { Authorization: `Bearer ${token}` },
         })
         if (sRes.ok) {

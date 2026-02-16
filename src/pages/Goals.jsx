@@ -14,7 +14,7 @@ export default function Goals() {
       return
     }
     ;(async () => {
-      const res = await fetch('http://localhost:4000/goals', { headers: { Authorization: `Bearer ${token}` } })
+      const res = await fetch('https://fittrack-6smg.onrender.com/goals', { headers: { Authorization: `Bearer ${token}` } })
       if (res.ok) {
         const data = await res.json()
         setDaily(data.goal?.dailyCalorieLimit ?? '')
@@ -29,7 +29,7 @@ export default function Goals() {
     setError('')
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch('http://localhost:4000/goals', {
+      const res = await fetch('https://fittrack-6smg.onrender.com/goals', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ dailyCalorieLimit: daily ? Number(daily) : null, weeklyWorkoutTarget: weekly ? Number(weekly) : null }),

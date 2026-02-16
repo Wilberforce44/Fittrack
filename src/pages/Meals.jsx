@@ -29,7 +29,7 @@ export default function Meals() {
     if (filterTo) params.set('dateTo', filterTo)
     if (filterMin) params.set('caloriesMin', filterMin)
     if (filterMax) params.set('caloriesMax', filterMax)
-    const res = await fetch(`http://localhost:4000/meals?${params.toString()}`, {
+    const res = await fetch(`https://fittrack-6smg.onrender.com/meals?${params.toString()}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
     if (!res.ok) {
@@ -55,7 +55,7 @@ export default function Meals() {
     setError('')
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch('http://localhost:4000/meals', {
+      const res = await fetch('https://fittrack-6smg.onrender.com/meals', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ calories: Number(calories), category }),
@@ -83,7 +83,7 @@ export default function Meals() {
     setError('')
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch(`http://localhost:4000/meals/${editId}`, {
+      const res = await fetch(`https://fittrack-6smg.onrender.com/meals/${editId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ calories: Number(editCalories), category: editCategory }),
@@ -106,7 +106,7 @@ export default function Meals() {
     setError('')
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch(`http://localhost:4000/meals/${id}`, {
+      const res = await fetch(`https://fittrack-6smg.onrender.com/meals/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       })

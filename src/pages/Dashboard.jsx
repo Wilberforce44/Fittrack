@@ -19,7 +19,7 @@ export default function Dashboard() {
     }
     ;(async () => {
       try {
-        const res = await fetch('http://localhost:4000/auth/me', {
+        const res = await fetch('https://fittrack-6smg.onrender.com/auth/me', {
           headers: { Authorization: `Bearer ${token}` },
         })
         if (!res.ok) {
@@ -28,12 +28,12 @@ export default function Dashboard() {
         }
         const data = await res.json()
         setUser(data.user)
-        const tRes = await fetch('http://localhost:4000/stats/today', { headers: { Authorization: `Bearer ${token}` } })
+        const tRes = await fetch('https://fittrack-6smg.onrender.com/stats/today', { headers: { Authorization: `Bearer ${token}` } })
         const tData = await tRes.json()
-        const wRes = await fetch('http://localhost:4000/stats/week', { headers: { Authorization: `Bearer ${token}` } })
+        const wRes = await fetch('https://fittrack-6smg.onrender.com/stats/week', { headers: { Authorization: `Bearer ${token}` } })
         const wData = await wRes.json()
         setToday({ workoutsCount: tData.workoutsCount ?? null, caloriesTotal: tData.caloriesTotal ?? null })
-        const gRes = await fetch('http://localhost:4000/goals', { headers: { Authorization: `Bearer ${token}` } })
+        const gRes = await fetch('https://fittrack-6smg.onrender.com/goals', { headers: { Authorization: `Bearer ${token}` } })
         const gData = await gRes.json()
         setWeek({
           workouts: wData.totals?.workouts ?? null,

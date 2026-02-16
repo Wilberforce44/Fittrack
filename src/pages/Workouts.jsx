@@ -29,7 +29,7 @@ export default function Workouts() {
     if (filterTo) params.set('dateTo', filterTo)
     if (filterMin) params.set('minutesMin', filterMin)
     if (filterMax) params.set('minutesMax', filterMax)
-    const res = await fetch(`http://localhost:4000/workouts?${params.toString()}`, {
+    const res = await fetch(`https://fittrack-6smg.onrender.com/workouts?${params.toString()}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
     if (!res.ok) {
@@ -55,7 +55,7 @@ export default function Workouts() {
     setError('')
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch('http://localhost:4000/workouts', {
+      const res = await fetch('https://fittrack-6smg.onrender.com/workouts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ type, minutes: Number(minutes) }),
@@ -83,7 +83,7 @@ export default function Workouts() {
     setError('')
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch(`http://localhost:4000/workouts/${editId}`, {
+      const res = await fetch(`https://fittrack-6smg.onrender.com/workouts/${editId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ type: editType, minutes: Number(editMinutes) }),
@@ -106,7 +106,7 @@ export default function Workouts() {
     setError('')
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch(`http://localhost:4000/workouts/${id}`, {
+      const res = await fetch(`https://fittrack-6smg.onrender.com/workouts/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       })
