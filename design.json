@@ -1,0 +1,272 @@
+{
+  "designSystem": {
+    "metadata": {
+      "projectName": "FitTrack Fitness Tracker",
+      "designStyle": "Modern, Clean, Health & Fitness Brand",
+      "framework": "React + Tailwind CSS",
+      "uiLibrary": "shadcn/ui components"
+    },
+    "colorPalette": {
+      "primary": {
+        "main": "#00A86B",
+        "description": "Teal/emerald green - used for primary CTAs, brand identity, and key interactive elements",
+        "usage": ["primary buttons", "brand logo background", "feature icons", "active states"]
+      },
+      "secondary": {
+        "pink": "#E91E63",
+        "blue": "#2196F3",
+        "description": "Vibrant accent colors for feature differentiation",
+        "usage": ["feature icons - heart health (pink)", "feature icons - time tracking (blue)"]
+      },
+      "text": {
+        "primary": "#1A1A1A",
+        "secondary": "#666666",
+        "tertiary": "#999999",
+        "description": "Text hierarchy from darkest to lightest"
+      },
+      "background": {
+        "primary": "#F0FDF4",
+        "secondary": "#FFFFFF",
+        "card": "#FFFFFF",
+        "description": "Light mint/pale green background (#F0FDF4) creates fresh, energetic feel"
+      },
+      "neutral": {
+        "white": "#FFFFFF",
+        "lightGray": "#F5F5F5",
+        "gray": "#E0E0E0"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "Inter, system-ui, -apple-system, sans-serif",
+        "description": "Modern, clean sans-serif for excellent readability"
+      },
+      "headings": {
+        "h1": {
+          "fontSize": "64px",
+          "fontWeight": "800",
+          "lineHeight": "1.1",
+          "letterSpacing": "-0.02em",
+          "color": "#1A1A1A",
+          "usage": "Main hero headline - 'Track Your Fitness.'"
+        },
+        "h1Accent": {
+          "fontSize": "64px",
+          "fontWeight": "800",
+          "lineHeight": "1.1",
+          "letterSpacing": "-0.02em",
+          "color": "#00A86B",
+          "usage": "Hero headline accent text - 'Achieve Your Goals.'"
+        },
+        "h3": {
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "lineHeight": "1.4",
+          "color": "#1A1A1A",
+          "usage": "Feature card titles - 'Heart Health', 'Time Tracking', etc."
+        }
+      },
+      "body": {
+        "large": {
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "1.6",
+          "color": "#666666",
+          "usage": "Hero subheadline and descriptions"
+        },
+        "medium": {
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "1.5",
+          "color": "#666666",
+          "usage": "Feature card descriptions"
+        },
+        "small": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "1.4",
+          "color": "#999999",
+          "usage": "Helper text, labels, metadata"
+        }
+      },
+      "navigation": {
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "color": "#1A1A1A",
+        "usage": "Navigation menu items"
+      }
+    },
+    "spacing": {
+      "scale": "8px base unit (Tailwind default)",
+      "sections": {
+        "containerMaxWidth": "1200px",
+        "containerPadding": "24px",
+        "sectionVerticalPadding": "80px",
+        "sectionVerticalPaddingMobile": "48px"
+      },
+      "components": {
+        "cardPadding": "32px",
+        "cardGap": "24px",
+        "buttonPaddingVertical": "12px",
+        "buttonPaddingHorizontal": "32px",
+        "iconSize": "48px"
+      }
+    },
+    "components": {
+      "buttons": {
+        "primary": {
+          "backgroundColor": "#00A86B",
+          "color": "#FFFFFF",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "padding": "12px 32px",
+          "borderRadius": "9999px",
+          "border": "none",
+          "hoverState": "darker shade of primary",
+          "example": "Get Started button"
+        },
+        "secondary": {
+          "backgroundColor": "#FFFFFF",
+          "color": "#1A1A1A",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "padding": "12px 32px",
+          "borderRadius": "9999px",
+          "border": "2px solid #E0E0E0",
+          "hoverState": "light gray background",
+          "example": "Login button"
+        }
+      },
+      "cards": {
+        "feature": {
+          "backgroundColor": "#FFFFFF",
+          "padding": "32px",
+          "borderRadius": "16px",
+          "boxShadow": "0 1px 3px rgba(0,0,0,0.1)",
+          "structure": [
+            "Icon (48x48px, rounded square with 12px radius, colored background)",
+            "Title (h3, 20px, bold, dark text)",
+            "Description (16px, regular, gray text)"
+          ],
+          "iconBackgrounds": {
+            "heartHealth": "#E91E63",
+            "timeTracking": "#2196F3",
+            "trackProgress": "#00A86B"
+          }
+        }
+      },
+      "navigation": {
+        "navbar": {
+          "backgroundColor": "#FFFFFF",
+          "height": "72px",
+          "padding": "0 24px",
+          "boxShadow": "0 1px 2px rgba(0,0,0,0.05)",
+          "structure": "Logo left, menu items right",
+          "items": ["Home", "Features", "About", "Contact"]
+        },
+        "logo": {
+          "icon": "Rounded square (48x48px) with teal background",
+          "iconContent": "Dumbbell/fitness symbol in white",
+          "text": "FitTrack",
+          "textSize": "24px",
+          "textWeight": "700"
+        }
+      },
+      "icons": {
+        "style": "Line icons, white color on colored backgrounds",
+        "size": "24-28px stroke width 2px",
+        "container": {
+          "size": "64px",
+          "borderRadius": "12px",
+          "padding": "16px"
+        }
+      }
+    },
+    "layout": {
+      "hero": {
+        "backgroundColor": "#F0FDF4",
+        "minHeight": "600px",
+        "contentAlignment": "center",
+        "structure": [
+          "Large headline (two-tone: black + green)",
+          "Subheadline paragraph (gray, centered, max-width 800px)",
+          "CTA buttons (horizontal flex, centered, gap 16px)"
+        ]
+      },
+      "features": {
+        "backgroundColor": "#F0FDF4",
+        "display": "grid",
+        "gridColumns": "3 columns on desktop, 1 column on mobile",
+        "gap": "24px",
+        "cardAlignment": "center text alignment"
+      },
+      "grid": {
+        "desktop": "3 columns",
+        "tablet": "2 columns",
+        "mobile": "1 column",
+        "gap": "24px"
+      }
+    },
+    "responsiveness": {
+      "breakpoints": {
+        "mobile": "< 640px",
+        "tablet": "640px - 1024px",
+        "desktop": "> 1024px"
+      },
+      "adjustments": {
+        "mobile": [
+          "Hero headline: 36-40px font size",
+          "Feature grid: single column",
+          "Button stack: vertical layout",
+          "Padding reduced to 16px",
+          "Navigation: hamburger menu"
+        ],
+        "tablet": [
+          "Hero headline: 48-52px font size",
+          "Feature grid: 2 columns",
+          "Maintain horizontal button layout"
+        ]
+      }
+    },
+    "designPrinciples": {
+      "aestheticGuidelines": [
+        "Clean and minimal - avoid clutter",
+        "Energetic and motivating - use vibrant accent colors sparingly",
+        "Health-focused - soft green backgrounds create fresh, natural feel",
+        "Accessible - high contrast text, large touch targets (min 44px)",
+        "Consistent spacing - use 8px grid system",
+        "Rounded corners throughout - friendly, modern feel (12-16px for cards, full rounded for buttons)"
+      ],
+      "interactionPatterns": [
+        "Primary actions use solid teal buttons with full border-radius",
+        "Secondary actions use outlined white buttons",
+        "Hover states: subtle color darkening + slight scale (1.02)",
+        "Feature cards: subtle shadow on hover",
+        "Smooth transitions: 200-300ms ease-in-out"
+      ]
+    },
+    "animations": {
+      "transitions": {
+        "duration": "200-300ms",
+        "easing": "ease-in-out",
+        "properties": ["background-color", "transform", "box-shadow", "opacity"]
+      },
+      "microInteractions": [
+        "Button hover: background color change + subtle lift",
+        "Card hover: shadow intensifies",
+        "Link hover: color change to primary green"
+      ]
+    },
+    "accessibility": {
+      "requirements": [
+        "WCAG 2.1 AA compliance minimum",
+        "Color contrast ratio 4.5:1 for body text, 3:1 for large text",
+        "Keyboard navigation support",
+        "Focus indicators visible and clear",
+        "Alt text for all icons and images",
+        "Semantic HTML structure",
+        "ARIA labels where needed"
+      ]
+    }
+  }
+}
