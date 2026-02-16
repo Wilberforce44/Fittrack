@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 export default function Navbar() {
   const [userLabel, setUserLabel] = useState('')
   const [summary, setSummary] = useState({ workouts: null, calories: null })
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -29,6 +30,7 @@ export default function Navbar() {
     })()
   }, [])
   return (
+    <>
     <nav className="sticky top-0 z-50 w-full bg-gradient-to-r from-white via-[#F0FDF4] to-white backdrop-blur h-[72px] shadow-sm">
       <div className="max-w-[1200px] mx-auto h-full px-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
@@ -69,7 +71,12 @@ export default function Navbar() {
             </>
           )}
         </div>
-        <button className="md:hidden p-2 rounded-lg border border-[#E0E0E0]" aria-label="Open navigation menu">
+        <button
+          className="md:hidden p-2 rounded-lg border border-[#E0E0E0]"
+          aria-label="Open navigation menu"
+          aria-expanded={menuOpen ? 'true' : 'false'}
+          onClick={() => setMenuOpen((o) => !o)}
+        >
           <span className="sr-only">Menu</span>
           <div className="w-5 h-0.5 bg-[#1A1A1A] mb-1.5"></div>
           <div className="w-5 h-0.5 bg-[#1A1A1A] mb-1.5"></div>
@@ -77,5 +84,35 @@ export default function Navbar() {
         </button>
       </div>
     </nav>
+    {menuOpen && (
+      <div className="md:hidden fixed top-[72px] inset-x-0 bg-white border-b border-[#E0E0E0] shadow-sm z-50">
+        <div className="max-w-[1200px] mx-auto px-6 py-4 flex flex-col gap-3">
+          {!userLabel && (
+            <>
+              <a href="#home" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-[#F5F5F5]">Home</a>
+              <a href="#features" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-[#F5F5F5]">Features</a>
+              <a href="#about" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-[#F5F5F5]">About</a>
+              <a href="#contact" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-[#F5F5F5]">Contact</a>
+              <div className="flex items-center gap-3 mt-2">
+                <a href="#signup" onClick={() => setMenuOpen(false)} className="flex-1 px-4 py-2 rounded-full bg-[#00A86B] text-white text-center font-semibold">Sign up</a>
+                <a href="#login" onClick={() => setMenuOpen(false)} className="flex-1 px-4 py-2 rounded-full bg-white border border-[#E0E0E0] text-center font-semibold">Login</a>
+              </div>
+            </>
+          )}
+          {userLabel && (
+            <>
+              <a href="#dashboard" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-[#F5F5F5]">Dashboard</a>
+              <a href="#workouts" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-[#F5F5F5]">Workouts</a>
+              <a href="#meals" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-[#F5F5F5]">Meals</a>
+              <a href="#goals" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg hover:bg-[#F5F5F5]">Goals</a>
+              <div className="mt-2 inline-flex items-center bg-[#F0FDF4] text-[#1A1A1A] border border-[#E0E0E0] px-3 py-1 rounded-full text-sm w-max">
+                <span className="mr-1">Logged in as</span><span className="font-semibold text-[#00A86B]">{userLabel}</span>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    )}
+    </>
   )
 }
